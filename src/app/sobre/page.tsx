@@ -80,23 +80,49 @@ export default function SobrePage() {
                             preço disponível em múltiplas lojas.
                         </p>
                         <p className="text-muted-foreground mb-4">
-                            Diferente de outros sites, nós compramos os produtos que
-                            analisamos. Passamos semanas testando, benchmarking e usando no
-                            dia a dia antes de dar nosso veredito final.
+                            Diferente de outros sites, pesquisamos extensivamente os produtos que
+                            analisamos. Passamos horas comparando especificações, benchmarks e
+                            avaliações de usuários reais antes de dar nosso veredito final.
                         </p>
                         <p className="text-muted-foreground">
                             Nosso modelo de negócio é simples: ganhamos comissões quando você
                             compra através dos nossos links de afiliados. Isso não influencia
-                            nossas análises - recomendamos apenas produtos que usaríamos
-                            pessoalmente.
+                            nossas análises - recomendamos apenas produtos que recomendaríamos
+                            para amigos e família.
                         </p>
                     </div>
                     <div className="bg-muted rounded-2xl p-8 text-center">
-                        <div className="text-6xl font-black text-primary mb-4">10K+</div>
+                        <div className="text-6xl font-black text-primary mb-4">100%</div>
                         <p className="text-muted-foreground">
-                            Leitores confiam em nós todo mês para fazer melhores escolhas de
-                            compra
+                            Transparência sobre nossa metodologia e modelo de negócio
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Methodology */}
+            <section className="mb-16 bg-card border border-border rounded-2xl p-8">
+                <h2 className="text-3xl font-black mb-6">Nossa Metodologia</h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 className="text-xl font-bold mb-3">📊 Como Avaliamos</h3>
+                        <ul className="space-y-2 text-muted-foreground">
+                            <li>• Pesquisa aprofundada de especificações técnicas</li>
+                            <li>• Análise de benchmarks de fontes confiáveis</li>
+                            <li>• Compilação de reviews de usuários reais</li>
+                            <li>• Comparação de preços em múltiplas lojas</li>
+                            <li>• Avaliação de custo-benefício</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-bold mb-3">🎯 Critérios de Rating</h3>
+                        <ul className="space-y-2 text-muted-foreground">
+                            <li>• <strong>5/5:</strong> Excepcional, melhor da categoria</li>
+                            <li>• <strong>4/5:</strong> Excelente, altamente recomendado</li>
+                            <li>• <strong>3/5:</strong> Bom, atende às expectativas</li>
+                            <li>• <strong>2/5:</strong> Regular, tem limitações significativas</li>
+                            <li>• <strong>1/5:</strong> Não recomendado</li>
+                        </ul>
                     </div>
                 </div>
             </section>

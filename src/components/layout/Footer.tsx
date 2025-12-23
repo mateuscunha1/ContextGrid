@@ -47,9 +47,17 @@ export function Footer() {
             </a>
           </div>
 
+          {/* Affiliate Disclaimer */}
+          <p className="text-xs text-muted-foreground mb-2">
+            Este site contém links de afiliados.{" "}
+            <Link href="/legal" className="underline hover:text-foreground">
+              Saiba mais
+            </Link>
+          </p>
+
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 ContextGrid. Todos os direitos reservados. Os preços podem variar.
+            © 2024 ContextGrid. Todos os direitos reservados.
           </p>
         </div>
       </div>

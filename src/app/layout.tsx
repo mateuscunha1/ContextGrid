@@ -3,6 +3,9 @@ import { Work_Sans, Merriweather } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components/layout/Layout";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { JsonLd, generateWebSiteSchema, generateOrganizationSchema } from "@/components/seo/JsonLd";
+import { CookieConsent } from "@/components/CookieConsent";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -18,32 +21,40 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://contextgrid.vercel.app'),
   title: {
-    default: "ContextGrid - Reviews de Tecnologia",
+    default: "ContextGrid - Melhores Ofertas em Tecnologia 2025",
     template: "%s | ContextGrid",
   },
   description:
-    "Portal brasileiro de reviews de tecnologia: laptops, smartphones, gaming e mais. Comparações detalhadas e os melhores preços do mercado.",
+    "Encontre os melhores preços em smartphones, notebooks e gadgets. Reviews detalhados + comparativo de lojas + links diretos para compra. Economize até 40%!",
   keywords: [
-    "reviews tecnologia",
-    "comparação notebooks",
-    "melhor celular",
-    "PC gamer",
+    "review tecnologia",
+    "melhor preço celular",
+    "comparativo notebooks",
     "ofertas tech",
+    "smartphone barato",
+    "PC gamer promoção",
   ],
-  authors: [{ name: "ContextGrid Team" }],
+  authors: [{ name: "ContextGrid" }],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     siteName: "ContextGrid",
-    title: "ContextGrid - Reviews de Tecnologia",
+    title: "ContextGrid - Melhores Ofertas em Tecnologia",
     description:
-      "Portal brasileiro de reviews de tecnologia: laptops, smartphones, gaming e mais.",
+      "🔥 Reviews + Comparativo de Preços + Links Diretos. Economize até 40% nas suas compras de tecnologia.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ContextGrid" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ContextGrid - Reviews de Tecnologia",
-    description: "Portal brasileiro de reviews de tecnologia.",
+    title: "ContextGrid - Melhores Ofertas em Tecnologia",
+    description: "🔥 Reviews + Comparativo de Preços. Economize até 40%!",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -58,6 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <JsonLd data={generateWebSiteSchema()} />
+        <JsonLd data={generateOrganizationSchema()} />
+      </head>
       <body
         className={`${workSans.variable} ${merriweather.variable} antialiased`}
       >
@@ -68,6 +83,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Layout>{children}</Layout>
+          <CookieConsent />
+          <GoogleAnalytics />
         </ThemeProvider>
       </body>
     </html>

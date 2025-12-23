@@ -1,0 +1,76 @@
+{
+  "product": {
+    "name": "MacBook Pro 14\" M3 Pro (CPU de 11 núcleos, GPU de 14 núcleos)",
+    "brand": "Apple",
+    "model": "MacBook Pro 14\" (M3 Pro)",
+    "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600"
+  },
+  "specs": [
+    {
+      "icon": "cpu",
+      "label": "Processador",
+      "value": "Chip Apple M3 Pro com CPU de 11 núcleos (3 de desempenho e 8 de eficiência), GPU de 14 núcleos, Neural Engine de 16 núcleos"
+    },
+    {
+      "icon": "monitor",
+      "label": "Tela",
+      "value": "Tela Liquid Retina XDR de 14,2 polegadas (diagonal); resolução nativa de 3024 x 1964 a 254 pixels por polegada; XDR (Extreme Dynamic Range), ProMotion (taxa de atualização adaptativa até 120 Hz)"
+    },
+    {
+      "icon": "memory",
+      "label": "RAM",
+      "value": "18 GB de memória unificada"
+    },
+    {
+      "icon": "hard-drive",
+      "label": "Armazenamento",
+      "value": "SSD de 512 GB"
+    },
+    {
+      "icon": "gpu",
+      "label": "GPU",
+      "value": "GPU de 14 núcleos Apple M3 Pro"
+    }
+  ],
+  "pros": [
+    "Desempenho excepcional do chip M3 Pro",
+    "Tela Liquid Retina XDR impressionante",
+    "Excelente duração da bateria",
+    "Design elegante e construção premium",
+    "Sistema operacional macOS otimizado"
+  ],
+  "cons": [
+    "Preço elevado",
+    "Expansibilidade limitada",
+    "Reparos podem ser caros"
+  ],
+  "ratings": {
+    "overall": 4.6,
+    "performance": 4.7,
+    "display": 4.8,
+    "build": 4.7,
+    "battery": 4.5,
+    "value": 4
+  },
+  "prices": {
+    "amazon": {
+      "price": 17999,
+      "originalPrice": 0,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "kabum": {
+      "price": 18500,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "pichau": {
+      "price": 18200,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    }
+  },
+  "deal": {
+    "active": false,
+    "badge": "",
+    "expiresAt": ""
+  },
+  "category": "apple"
+}

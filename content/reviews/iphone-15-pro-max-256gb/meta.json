@@ -1,0 +1,76 @@
+{
+  "product": {
+    "name": "iPhone 15 Pro Max 256GB",
+    "brand": "Apple",
+    "model": "iPhone 15 Pro Max",
+    "image": "https://images.unsplash.com/photo-1695159474374-b698e325e567?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  "specs": [
+    {
+      "icon": "cpu",
+      "label": "Processador",
+      "value": "Chip A17 Pro (CPU de 6 núcleos, GPU de 6 núcleos)"
+    },
+    {
+      "icon": "monitor",
+      "label": "Tela",
+      "value": "Super Retina XDR de 6,7 polegadas com ProMotion (120Hz)"
+    },
+    {
+      "icon": "memory",
+      "label": "RAM",
+      "value": "8GB"
+    },
+    {
+      "icon": "hard-drive",
+      "label": "Armazenamento",
+      "value": "256GB NVMe"
+    },
+    {
+      "icon": "gpu",
+      "label": "GPU",
+      "value": "GPU Apple de 6 núcleos"
+    }
+  ],
+  "pros": [
+    "Desempenho excepcional com o chip A17 Pro",
+    "Câmera com qualidade fotográfica profissional",
+    "Tela Super Retina XDR com ProMotion (120Hz) incrivelmente fluida",
+    "Construção em titânio, mais leve e resistente",
+    "Bateria com excelente duração"
+  ],
+  "cons": [
+    "Preço elevado",
+    "Ausência de carregador na caixa",
+    "Ecossistema fechado da Apple"
+  ],
+  "ratings": {
+    "overall": 4.7,
+    "performance": 4.8,
+    "display": 4.9,
+    "build": 4.8,
+    "battery": 4.6,
+    "value": 4.2
+  },
+  "prices": {
+    "amazon": {
+      "price": 9500,
+      "originalPrice": 11000,
+      "url": "https://amzn.to/3Q53F65"
+    },
+    "kabum": {
+      "price": 9800,
+      "url": "https://tidd.ly/3Q1h90j"
+    },
+    "pichau": {
+      "price": 9700,
+      "url": "https://tidd.ly/3Q3X31P"
+    }
+  },
+  "deal": {
+    "active": true,
+    "badge": "OFERTA",
+    "expiresAt": "2024-01-01T23:59:59-03:00"
+  },
+  "category": "smartphones"
+}

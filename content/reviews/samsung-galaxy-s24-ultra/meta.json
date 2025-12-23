@@ -1,0 +1,77 @@
+{
+  "product": {
+    "name": "Samsung Galaxy S24 Ultra",
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600"
+  },
+  "specs": [
+    {
+      "icon": "cpu",
+      "label": "Processador",
+      "value": "Snapdragon 8 Gen 3 for Galaxy ou Exynos 2400 (dependendo da região)"
+    },
+    {
+      "icon": "monitor",
+      "label": "Tela",
+      "value": "6.8\" Dynamic AMOLED 2X, QHD+ (3120 x 1440), 120Hz adaptável"
+    },
+    {
+      "icon": "memory",
+      "label": "RAM",
+      "value": "8GB ou 12GB"
+    },
+    {
+      "icon": "hard-drive",
+      "label": "Armazenamento",
+      "value": "256GB, 512GB ou 1TB"
+    },
+    {
+      "icon": "gpu",
+      "label": "GPU",
+      "value": "Adreno 750 (Snapdragon) ou Xclipse 940 (Exynos)"
+    }
+  ],
+  "pros": [
+    "Câmera com zoom poderoso e versátil",
+    "Desempenho excepcional com o processador Snapdragon 8 Gen 3 for Galaxy",
+    "Tela Dynamic AMOLED 2X brilhante e vibrante",
+    "Bateria de longa duração",
+    "Resistência à água e poeira (IP68)",
+    "Integração com S Pen"
+  ],
+  "cons": [
+    "Preço elevado",
+    "Design pode ser considerado grande e pesado por alguns",
+    "Interface One UI pode ter muitos aplicativos pré-instalados"
+  ],
+  "ratings": {
+    "overall": 4.7,
+    "performance": 4.8,
+    "display": 4.9,
+    "build": 4.7,
+    "battery": 4.5,
+    "value": 4.3
+  },
+  "prices": {
+    "amazon": {
+      "price": 7999,
+      "originalPrice": 0,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "kabum": {
+      "price": 8299,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "pichau": {
+      "price": 0,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    }
+  },
+  "deal": {
+    "active": false,
+    "badge": "",
+    "expiresAt": ""
+  },
+  "category": "smartphones"
+}

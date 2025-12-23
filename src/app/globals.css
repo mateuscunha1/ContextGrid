@@ -1,26 +1,370 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ContextGrid Design System
+   Neo-Brutalist Tech Blog with high-contrast, functional aesthetics
+*/
+
+/* Custom theme configuration */
+@theme {
+  /* Font families */
+  --font-display: "Work Sans", system-ui, sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+
+  /* Primary brand - ContextGrid Blue */
+  --color-primary: #0EA5E9;
+  --color-primary-foreground: #FFFFFF;
+
+  /* Backgrounds */
+  --color-background: #F5F5F7;
+  --color-foreground: #212121;
+
+  /* Cards & Surfaces */
+  --color-card: #FFFFFF;
+  --color-card-foreground: #212121;
+
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #212121;
+
+  /* Secondary */
+  --color-secondary: #E2E8F0;
+  --color-secondary-foreground: #212121;
+
+  /* Muted */
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+
+  /* Accent */
+  --color-accent: #E2E8F0;
+  --color-accent-foreground: #212121;
+
+  /* Brand Gold for deals/offers */
+  --color-gold: #FFD700;
+  --color-gold-foreground: #000000;
+
+  /* Success/Error states */
+  --color-success: #22C55E;
+  --color-success-foreground: #FFFFFF;
+  --color-success-muted: #DCFCE7;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+  --color-destructive-muted: #FEE2E2;
+
+  /* Borders & Inputs */
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  --color-ring: #0EA5E9;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Category colors */
+  --color-category-windows: #0EA5E9;
+  --color-category-apple: #212121;
+  --color-category-ultrabooks: #06B6D4;
+  --color-category-gaming: #22C55E;
+  --color-category-mobile: #A855F7;
+  --color-category-audio: #F97316;
+  --color-category-peripherals: #EC4899;
+  --color-category-monitors: #8B5CF6;
+  --color-category-budget: #F59E0B;
+  --color-category-innovation: #14B8A6;
+
+  /* Custom shadows */
+  --shadow-neobrutal: 4px 4px 0px 0px #212121;
+  --shadow-neobrutal-sm: 2px 2px 0px 0px #212121;
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-slide-in: slide-in 0.3s ease-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Class-based dark mode */
+.dark {
+  --color-background: #121212;
+  --color-foreground: #E0E0E0;
+
+  --color-card: #1A1A1A;
+  --color-card-foreground: #E0E0E0;
+
+  --color-popover: #1A1A1A;
+  --color-popover-foreground: #E0E0E0;
+
+  --color-secondary: #2D2D2D;
+  --color-secondary-foreground: #E0E0E0;
+
+  --color-muted: #2D2D2D;
+  --color-muted-foreground: #A0A0A0;
+
+  --color-accent: #2D2D2D;
+  --color-accent-foreground: #E0E0E0;
+
+  --color-border: #2D2D2D;
+  --color-input: #2D2D2D;
+
+  --shadow-neobrutal: 4px 4px 0px 0px #FFFFFF;
+  --shadow-neobrutal-sm: 2px 2px 0px 0px #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Keyframes */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
   }
 }
 
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Base styles */
+* {
+  border-color: var(--color-border);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prose styles for article content */
+.prose {
+  color: var(--color-foreground);
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.prose strong {
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+
+.prose .lead {
+  color: var(--color-muted-foreground);
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+
+/* Neo-brutal shadow effects */
+.shadow-neobrutal {
+  box-shadow: var(--shadow-neobrutal);
+}
+
+.shadow-neobrutal-sm {
+  box-shadow: var(--shadow-neobrutal-sm);
+}
+
+/* Rating badge */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-gold), #F5C400);
+  color: var(--color-gold-foreground);
+}
+
+/* Category tag */
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Bento card base */
+.bento-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: all 0.2s ease;
+}
+
+.bento-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* CTA Button with neobrutal style */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  transition: all 0.2s ease;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  box-shadow: var(--shadow-neobrutal);
+}
+
+.btn-cta:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn-cta-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  background: var(--color-gold);
+  color: var(--color-gold-foreground);
+}
+
+.btn-cta-gold:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 2px solid var(--color-foreground);
+  color: var(--color-foreground);
+}
+
+.btn-outline:hover {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* Featured highlight border */
+.featured-border {
+  border: 4px solid var(--color-gold);
+}
+
+/* Discount badge */
+.discount-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--color-destructive);
+  color: var(--color-destructive-foreground);
+}
+
+/* Newsletter section */
+.newsletter-dark {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-foreground) 50%, transparent);
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }

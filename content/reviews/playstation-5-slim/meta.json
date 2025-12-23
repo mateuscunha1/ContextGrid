@@ -1,0 +1,75 @@
+{
+  "product": {
+    "name": "PlayStation 5 Slim",
+    "brand": "Sony",
+    "model": "CFI-2000",
+    "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600"
+  },
+  "specs": [
+    {
+      "icon": "cpu",
+      "label": "Processador",
+      "value": "AMD Ryzen Zen 2 customizado, 8 núcleos/16 threads, até 3.5 GHz"
+    },
+    {
+      "icon": "gpu",
+      "label": "GPU",
+      "value": "AMD Radeon RDNA 2 customizado, 10.28 TFLOPs"
+    },
+    {
+      "icon": "memory",
+      "label": "RAM",
+      "value": "16GB GDDR6"
+    },
+    {
+      "icon": "hard-drive",
+      "label": "Armazenamento",
+      "value": "1TB SSD"
+    },
+    {
+      "icon": "monitor",
+      "label": "Saída de Vídeo",
+      "value": "HDMI 2.1, suporte a 4K 120Hz, 8K"
+    }
+  ],
+  "pros": [
+    "Design mais compacto e leve",
+    "Armazenamento interno aumentado para 1TB",
+    "Unidade de disco Blu-ray Ultra HD removível",
+    "Desempenho idêntico ao PlayStation 5 original"
+  ],
+  "cons": [
+    "Necessidade de adquirir suporte vertical separadamente",
+    "Preço ainda elevado",
+    "Pode ser difícil de encontrar em estoque"
+  ],
+  "ratings": {
+    "overall": 4.7,
+    "performance": 4.8,
+    "display": 4.9,
+    "build": 4.6,
+    "battery": 0,
+    "value": 4.3
+  },
+  "prices": {
+    "amazon": {
+      "price": 3999,
+      "originalPrice": 4499,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "kabum": {
+      "price": 3899,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    },
+    "pichau": {
+      "price": 3949,
+      "url": "ADICIONAR_LINK_AFILIADO"
+    }
+  },
+  "deal": {
+    "active": false,
+    "badge": "",
+    "expiresAt": ""
+  },
+  "category": "gaming"
+}

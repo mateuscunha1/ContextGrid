@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -13,12 +13,34 @@ interface NewsletterProps {
 
 export function Newsletter({ variant = "dark", className }: NewsletterProps) {
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
-    console.log("Newsletter signup:", email);
-    setEmail("");
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("success");
+        setMessage("Inscrito com sucesso! 🎉");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage(data.error || "Erro ao inscrever");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Erro de conexão");
+    }
   };
 
   const isDark = variant === "dark";
@@ -67,35 +89,56 @@ export function Newsletter({ variant = "dark", className }: NewsletterProps) {
           caixa de entrada toda sexta-feira. Sem spam, prometemos.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-        >
-          <Input
-            type="email"
-            placeholder="Seu melhor email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className={cn(
-              "flex-1",
-              isDark && "bg-background/10 border-background/20 text-background placeholder:text-background/50",
-              isGold && "bg-gold-foreground/10 border-gold-foreground/20 text-gold-foreground placeholder:text-gold-foreground/50"
-            )}
-          />
-          <Button
-            type="submit"
-            className={cn(
-              "font-bold",
-              isDark && "bg-background text-foreground hover:bg-background/90",
-              isGold && "bg-gold-foreground text-gold hover:bg-gold-foreground/90",
-              !isDark && !isGold && "btn-cta"
-            )}
+        {status === "success" ? (
+          <div className="flex items-center justify-center gap-2 text-green-500 font-medium">
+            <Check className="size-5" />
+            {message}
+          </div>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
           >
-            Inscrever-se
-            <ArrowRight className="size-4 ml-2" />
-          </Button>
-        </form>
+            <Input
+              type="email"
+              placeholder="Seu melhor email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={status === "loading"}
+              className={cn(
+                "flex-1",
+                isDark && "bg-background/10 border-background/20 text-background placeholder:text-background/50",
+                isGold && "bg-gold-foreground/10 border-gold-foreground/20 text-gold-foreground placeholder:text-gold-foreground/50"
+              )}
+            />
+            <Button
+              type="submit"
+              disabled={status === "loading"}
+              className={cn(
+                "font-bold",
+                isDark && "bg-background text-foreground hover:bg-background/90",
+                isGold && "bg-gold-foreground text-gold hover:bg-gold-foreground/90",
+                !isDark && !isGold && "btn-cta"
+              )}
+            >
+              {status === "loading" ? (
+                <>
+                  <Loader2 className="size-4 mr-2 animate-spin" />
+                  Inscrevendo...
+                </>
+              ) : (
+                <>
+                  Inscrever-se
+                  <ArrowRight className="size-4 ml-2" />
+                </>
+              )}
+            </Button>
+          </form>
+        )}
+        {status === "error" && (
+          <p className="text-red-500 text-sm mt-2">{message}</p>
+        )}
       </div>
     </section>
   );

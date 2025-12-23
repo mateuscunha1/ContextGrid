@@ -8,7 +8,7 @@ import { ProsCons } from "@/components/mdx/ProsCons";
 import { StoreComparison } from "@/components/mdx/StoreComparison";
 import { StickyBuyBar } from "@/components/mdx/StickyBuyBar";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { JsonLd, generateProductSchema } from "@/components/seo/JsonLd";
+import { JsonLd, generateProductSchema, generateBreadcrumbSchema } from "@/components/seo/JsonLd";
 import { AffiliateDisclosure } from "@/components/seo/AffiliateDisclosure";
 
 interface ReviewPageProps {
@@ -45,9 +45,18 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
         prices: meta.prices,
     });
 
+    // Generate Breadcrumb schema
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://context-grid.vercel.app";
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", url: siteUrl },
+        { name: "Reviews", url: `${siteUrl}/reviews` },
+        { name: frontmatter.title, url: `${siteUrl}/reviews/${slug}` },
+    ]);
+
     return (
         <>
             <JsonLd data={productSchema} />
+            <JsonLd data={breadcrumbSchema} />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-6 font-medium uppercase tracking-wider">

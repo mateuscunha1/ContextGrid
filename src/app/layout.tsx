@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { JsonLd, generateWebSiteSchema, generateOrganizationSchema } from "@/components/seo/JsonLd";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -70,6 +71,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
         <JsonLd data={generateWebSiteSchema()} />
         <JsonLd data={generateOrganizationSchema()} />
       </head>
@@ -85,6 +88,7 @@ export default function RootLayout({
           <Layout>{children}</Layout>
           <CookieConsent />
           <GoogleAnalytics />
+          <ServiceWorkerRegistration />
         </ThemeProvider>
       </body>
     </html>

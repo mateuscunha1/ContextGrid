@@ -9,6 +9,7 @@ import {
     Rocket,
     ChevronLeft,
     Settings,
+    Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +23,11 @@ const navItems = [
         title: "Reviews",
         href: "/admin/reviews",
         icon: FileText,
+    },
+    {
+        title: "Subscribers",
+        href: "/admin/subscribers",
+        icon: Users,
     },
     {
         title: "Analytics",

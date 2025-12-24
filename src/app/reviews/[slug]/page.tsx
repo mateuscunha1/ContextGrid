@@ -10,6 +10,7 @@ import { StickyBuyBar } from "@/components/mdx/StickyBuyBar";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { JsonLd, generateProductSchema, generateBreadcrumbSchema } from "@/components/seo/JsonLd";
 import { AffiliateDisclosure } from "@/components/seo/AffiliateDisclosure";
+import { Comments } from "@/components/Comments";
 
 interface ReviewPageProps {
     params: Promise<{ slug: string }>;
@@ -121,6 +122,9 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
 
                 {/* Sticky Buy Bar */}
                 <StickyBuyBar meta={meta} />
+
+                {/* Comments Section */}
+                <Comments />
             </div>
         </>
     );

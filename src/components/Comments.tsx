@@ -21,9 +21,9 @@ export function Comments({ term }: CommentsProps) {
         const script = document.createElement("script");
         script.src = "https://giscus.app/client.js";
         script.setAttribute("data-repo", "mateuscunha1/ContextGrid");
-        script.setAttribute("data-repo-id", ""); // User needs to fill this
+        script.setAttribute("data-repo-id", "R_kgDOQuA1Hw");
         script.setAttribute("data-category", "Announcements");
-        script.setAttribute("data-category-id", ""); // User needs to fill this
+        script.setAttribute("data-category-id", "DIC_kwDOQuA1h84C0Lq1");
         script.setAttribute("data-mapping", "pathname");
         script.setAttribute("data-strict", "0");
         script.setAttribute("data-reactions-enabled", "1");
